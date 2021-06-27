@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyAUFIPPlsbSzv9tHS_7NtJyv9iRgbMziWg",
+              authDomain: "users-db-a6746.firebaseapp.com",
+              databaseURL: "https://users-db-a6746-default-rtdb.europe-west1.firebasedatabase.app",
+              projectId: "users-db-a6746",
+              storageBucket: "users-db-a6746.appspot.com",
+              messagingSenderId: "270728466776",
+              appId: "1:270728466776:web:25dfa1589b99e9bec7152d"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+    </head>
+    <body>
+        <center>
+            <input type='number' placeholder="Year (with 20)" id='year'>
+            <br>
+            <input type='number' placeholder="month number without 0s prefix" id='month'>
+            <br>
+            <input type="number" placeholder="date (without prefixes and 0s)" id='date'>
+            <br>
+            <input type="time" placeholder="time" id='time'>
+            <br>
+            <input type='text' placeholder="name" id='name'>
+            <br>
+            <input type='text' placeholder="description" id='description'>
+            <br>
+            <input type='text' placeholder="youtube link" id='link'>
+            <br>
+            <br>
+            <button id='btn'>Submit</button>
+        </center>
+        <script>
+            var database = firebase.database();
+            document.getElementById('btn').addEventListener('click',e=>{
+                e.preventDefault();
+                var year = document.getElementById('year').value;
+                var month = document.getElementById('month').value;
+                var date = document.getElementById('date').value;
+                var time = document.getElementById('time').value;
+                var name = document.getElementById('name').value;
+                var description = document.getElementById('description').value;
+                var loc = document.getElementById('link').value;
+    
+                database.ref('/Streams/'+year+","+month+","+date+'/').set({
+                    description: description,
+                    link: loc,
+                    name: name,
+                    time: time
+                })
+                .then(function(){
+                    alert('done')
+                })
+            })
+        </script>
+    </body>
+</html>

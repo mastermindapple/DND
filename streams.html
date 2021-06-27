@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+        <link rel='stylesheet' href="stylesheets/topbar.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='stylesheets/streams.css'>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyAUFIPPlsbSzv9tHS_7NtJyv9iRgbMziWg",
+              authDomain: "users-db-a6746.firebaseapp.com",
+              databaseURL: "https://users-db-a6746-default-rtdb.europe-west1.firebasedatabase.app",
+              projectId: "users-db-a6746",
+              storageBucket: "users-db-a6746.appspot.com",
+              messagingSenderId: "270728466776",
+              appId: "1:270728466776:web:25dfa1589b99e9bec7152d"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+    </head>
+    <body>
+        <script src='scripts/streams.js'></script>
+        <div class='topbar'>
+            <ul class='content-list'>
+
+                <li class='logo-wrapper-container'>
+                    <a href='index.html'>
+                        <div class='logo-container'>
+                            Logo
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="options-wrapper-container">
+                    <ul>
+                        <li>
+                            <a href="*">
+                                Teaching Tips
+                            </a>
+                        </li>
+                        <li>
+                            <a href="*">
+                                About us
+                            </a>
+                        </li>
+                        <li> 
+                            <a href="*">
+                                Donate
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='contact-wrapper-container'>
+                    <a href="streams.html">
+                        <div>
+                            Watch Streams
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+   
+        <div class='heading-container'>
+            <center class='heading-wrapper'>
+                <h1 class='heading'>Watch some streams, and then some more.</h1>
+            </center>
+        </div>
+        <div class='future-container'>
+            <center class='future-wrapper'>
+                <h1 class='future-heading'>
+                    Upcoming Streams
+                </h1>
+                <br>
+                <div class='divs-container' id='divs-container'></div>
+            </center>
+        </div>
+
+        <div class='past-container'>
+            <center class='past-wrapper'>
+                <h1 class='past-heading'>
+                    Previous Streams
+                </h1>
+                <br>
+                <div class="divs-container" id='past-divs-container'></div>
+            </center>
+        </div>
+    </body>
+</html>
